@@ -5,13 +5,17 @@ const Footer = () => {
 
   return (
     <footer className="footer">
+      <div className="divider" />
       <div className="footer-content">
-        <p className="footer-text">
-          &copy; {currentYear} Omar Jalled. All rights reserved.
-        </p>
-        <p className="footer-subtext">
-          Built with React.js & Vite
-        </p>
+        <div className="footer-left">
+          <span className="footer-logo">
+            <span className="footer-bracket">&lt;</span>OJ<span className="footer-bracket">/&gt;</span>
+          </span>
+          <span className="footer-copy">&copy; {currentYear} Omar Jalled</span>
+        </div>
+        <div className="footer-right">
+          <span className="footer-built">Built with React + Vite</span>
+        </div>
       </div>
     </footer>
   )

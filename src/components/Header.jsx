@@ -7,9 +7,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
+    const handleScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -26,17 +24,16 @@ const Header = () => {
   const handleNavClick = (e, href) => {
     e.preventDefault()
     setMobileMenuOpen(false)
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         <a href="#hero" className="logo" onClick={(e) => handleNavClick(e, '#hero')}>
-          <span className="logo-text">Omar Jalled</span>
+          <span className="logo-bracket">&lt;</span>
+          OJ
+          <span className="logo-bracket">/&gt;</span>
         </a>
 
         <nav className={`nav ${mobileMenuOpen ? 'open' : ''}`}>
@@ -50,6 +47,9 @@ const Header = () => {
               {item.name}
             </a>
           ))}
+          <a href="#contact" className="nav-cta" onClick={(e) => handleNavClick(e, '#contact')}>
+            Hire Me
+          </a>
         </nav>
 
         <button

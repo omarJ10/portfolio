@@ -1,93 +1,87 @@
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import { FaGithub, FaArrowRight } from 'react-icons/fa'
 import './Projects.css'
 
 const Projects = () => {
   const projects = [
     {
-      title: 'System de gestion d\'agence de voyage',
-      type: 'Project en groupe',
-      description: 'Développé un système JavaFX/MySQL pour la gestion des hôtels, locations de voitures, vols et attractions touristiques en Tunisie. Intégré des recommandations alimentées par l\'IA, une messagerie en temps réel via Firebase et un système complet de réservation.',
-      technologies: ['JavaFX', 'Java', 'Scene Builder', 'MySQL', 'Firebase', 'AI Models'],
-      github: 'https://github.com/ahmed-brahmi1/TuniXplore',
-      features: [
-        'Gestion complète des réservations',
-        'Recommandations IA',
-        'Messagerie temps réel Firebase',
-        'Interface JavaFX intuitive'
-      ]
+      num: '01',
+      title: 'AgriSmart',
+      subtitle: 'AI-Powered Precision Agriculture Platform',
+      role: 'Solution Architect · Team of 6',
+      period: 'Jan – May 2026',
+      description: 'Architected a microservices platform with 6 independent services. Deployed on-device plant disease detection (MobileNetV2 TFLite, 38 classes, 87K+ images) with sub-3s offline inference. Built a RAG irrigation assistant with LangChain + Llama 3.',
+      technologies: ['Python', 'FastAPI', 'TFLite', 'LangChain', 'Llama 3', 'Docker', 'PostgreSQL', 'MQTT'],
+      github: null,
+      featured: true
     },
     {
-      title: 'ForjaBlouchi',
-      type: 'Plateforme de découverte de films',
-      description: 'Développé une plateforme web permettant de parcourir une sélection de films, consulter des fiches détaillées et lire ou publier des avis utilisateurs, le tout via une interface responsive et intuitive.',
-      technologies: ['ReactJS', 'Spring Boot', 'REST API', 'MongoDB'],
-      github: 'https://github.com/omarJ10/ForjaBalouchi',
-      features: [
-        'Parcourir et rechercher des films',
-        'Fiches détaillées avec informations complètes',
-        'Système d\'avis utilisateurs',
-        'Interface responsive moderne'
-      ]
+      num: '02',
+      title: 'Visual Attention Captioning',
+      subtitle: 'SAT Reproduction & Error Analysis',
+      role: 'Research Project',
+      period: 'Feb – Apr 2026',
+      description: 'Reproduced "Show, Attend and Tell" and built a caption rectification engine using BLIP + YOLOv8. Defined a custom Object Preservation Rate (OPR) metric. Full-stack demo with FastAPI + ReactJS.',
+      technologies: ['PyTorch', 'BLIP', 'YOLOv8', 'Stable Diffusion', 'FastAPI', 'ReactJS'],
+      github: 'https://github.com/omarJ10',
+      featured: true
     },
     {
-      title: 'Application de gestion d\'étudiants',
-      type: 'Full-Stack Application',
-      description: 'Développé un système complet de gestion des étudiants améliorant l\'organisation des tâches et des données, réduisant de 30% la charge administrative et augmentant la productivité au sein des établissements éducatifs.',
-      technologies: ['Angular', 'Spring Boot', 'MySQL'],
-      github: 'https://github.com/omarJ10/Employee-Manager-app',
-      features: [
-        'Gestion complète des étudiants',
-        'Réduction de 30% de la charge admin',
-        'Organisation optimisée des données',
-        'Interface Angular moderne'
-      ]
+      num: '03',
+      title: 'MLOps Drug Classification',
+      subtitle: 'End-to-End ML Pipeline',
+      role: 'ML Engineer',
+      period: 'Nov – Dec 2025',
+      description: 'Random Forest + SMOTE achieving 0.89 F1-score on imbalanced medical data. FastAPI serving at <100ms. MLflow tracking, Docker Compose orchestration, Elasticsearch + Kibana observability.',
+      technologies: ['Scikit-learn', 'FastAPI', 'MLflow', 'Docker', 'Elasticsearch', 'Kibana'],
+      github: 'https://github.com/omarJ10',
+      featured: false
     }
   ]
 
   return (
-    <section id="projects" className="projects">
-      <h2 className="section-title">Featured Projects</h2>
-      <div className="projects-grid">
-        {projects.map((project, idx) => (
-          <div key={idx} className="project-card">
-            <div className="project-header">
-              <div>
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-type">{project.type}</p>
-              </div>
-              <div className="project-links">
-                <a 
-                  href={project.github} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="project-link"
-                  title="View on GitHub"
-                >
-                  <FaGithub />
-                </a>
-              </div>
-            </div>
-            
-            <p className="project-description">{project.description}</p>
-            
-            <div className="project-features">
-              {project.features.map((feature, i) => (
-                <div key={i} className="feature-item">
-                  <span className="feature-bullet">✓</span>
-                  {feature}
+    <>
+      <div className="divider" />
+      <section id="projects" className="projects">
+        <span className="section-label">// Projects</span>
+        <div className="projects-header">
+          <h2 className="section-heading">
+            A Showcase of<br />
+            <span className="highlight">My Latest Work</span>
+          </h2>
+          <span className="code-bracket">&lt;/&gt;</span>
+        </div>
+
+        <div className="projects-grid">
+          {projects.map((project, idx) => (
+            <div key={idx} className={`proj-card ${project.featured ? 'featured' : ''}`}>
+              <div className="proj-card-top">
+                <span className="proj-num">{project.num}</span>
+                <div className="proj-meta">
+                  <span className="proj-period">{project.period}</span>
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="proj-github">
+                      <FaGithub />
+                    </a>
+                  )}
                 </div>
-              ))}
+              </div>
+
+              <h3 className="proj-title">{project.title}</h3>
+              <p className="proj-subtitle">{project.subtitle}</p>
+              <p className="proj-role">{project.role}</p>
+
+              <p className="proj-desc">{project.description}</p>
+
+              <div className="proj-tech">
+                {project.technologies.map((tech, i) => (
+                  <span key={i} className="proj-tech-tag">{tech}</span>
+                ))}
+              </div>
             </div>
-            
-            <div className="project-technologies">
-              {project.technologies.map((tech, i) => (
-                <span key={i} className="project-tech-tag">{tech}</span>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
+    </>
   )
 }
 

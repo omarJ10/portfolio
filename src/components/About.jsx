@@ -1,43 +1,52 @@
 import './About.css'
 
 const About = () => {
+  const stats = [
+    { number: '3+', label: 'ML Projects Deployed' },
+    { number: '2', label: 'NVIDIA Certifications' },
+    { number: '0.89', label: 'Best F1-Score' },
+    { number: '6+', label: 'Services Architected' },
+  ]
+
   return (
-    <section id="about" className="about">
-      <h2 className="section-title">About Me</h2>
-      <div className="about-content">
-        <div className="about-text">
-          <p className="about-paragraph">
-            Développeur Full-Stack JavaScript avec une expérience dans la création d'applications 
-            web modernes et évolutives utilisant <strong>React.js</strong>, <strong>Next.js</strong>, 
-            <strong>Node.js</strong> ainsi que des bases de données SQL/NoSQL.
-          </p>
-          <p className="about-paragraph">
-            Passionné par la <strong>clean architecture</strong>, les composants réutilisables, 
-            la conception d'API et les solutions full-stack performantes.
-          </p>
-          <p className="about-paragraph">
-            Expérience pratique à travers des projets réels et des stages optimisés et déployés 
-            en production, utilisés par des utilisateurs. Je m'efforce constamment d'améliorer 
-            mes compétences et d'apprendre les dernières technologies pour créer des solutions 
-            innovantes et efficaces.
-          </p>
-        </div>
-        <div className="about-stats">
-          <div className="stat-card">
-            <div className="stat-number">2+</div>
-            <div className="stat-label">Years Experience</div>
+    <>
+      <div className="divider" />
+      <section id="about" className="about">
+        <div className="about-top">
+          <div className="about-left">
+            <span className="section-label">// About</span>
+            <h2 className="section-heading">
+              Building intelligent systems<br />
+              <span className="highlight">from research to production</span>
+            </h2>
           </div>
-          <div className="stat-card">
-            <div className="stat-number">6+</div>
-            <div className="stat-label">Projects Completed</div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-number">10+</div>
-            <div className="stat-label">Technologies</div>
+          <div className="about-right">
+            <p className="about-text">
+              Machine Learning Engineer with hands-on experience building 
+              end-to-end ML systems. I specialize in taking models from notebooks to 
+              production — with proper pipelines, monitoring, and scalability.
+            </p>
+            <p className="about-text">
+              Currently pursuing an Engineering Degree in Computer Science at ESPRIT, 
+              while actively delivering real-world projects in precision agriculture, 
+              medical AI, and computer vision research.
+            </p>
+            <a href="#projects" className="about-cta">
+              Explore my work <span className="cta-arrow">&rarr;</span>
+            </a>
           </div>
         </div>
-      </div>
-    </section>
+
+        <div className="stats-grid">
+          {stats.map((stat, idx) => (
+            <div key={idx} className="stat-card">
+              <div className="stat-number">{stat.number}</div>
+              <div className="stat-label">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   )
 }
 

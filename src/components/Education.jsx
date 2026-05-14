@@ -1,55 +1,87 @@
-import { FaGraduationCap, FaCalendar } from 'react-icons/fa'
 import './Education.css'
 
 const Education = () => {
   const education = [
     {
-      institution: 'École supérieure privée d\'ingénierie et de technologie',
-      degree: 'Diplôme d\'ingénieur en génie logiciel',
-      period: 'Sep 2024 - Jun 2027',
-      status: 'En cours',
-      description: 'Formation d\'ingénieur en génie logiciel avec focus sur le développement full-stack, les architectures logicielles et les méthodologies agiles.'
+      institution: 'ESPRIT',
+      full: 'Ecole Supérieure Privée d\'Ingénierie et de Technologies',
+      degree: 'Engineering Degree in Computer Science',
+      period: '2024 – Present',
+      status: 'current'
     },
     {
-      institution: 'Institut supérieur des études technologiques',
-      degree: 'Licence en technologies de l\'information',
-      period: 'Sep 2021 - Jun 2024',
-      status: 'Complété',
-      description: 'Formation technique en technologies de l\'information couvrant le développement web, les bases de données et les fondamentaux de la programmation.'
+      institution: 'ISET Rades',
+      full: 'Higher Institute of Technological Studies',
+      degree: 'Bachelor Degree in Information Technology',
+      period: '2021 – 2024',
+      status: 'done'
     }
   ]
 
+  const certs = [
+    { title: 'Applications of AI for Anomaly Detection', issuer: 'NVIDIA', date: 'Apr 2026' },
+    { title: 'Fundamentals of Deep Learning', issuer: 'NVIDIA', date: 'Feb 2026' },
+  ]
+
+  const inProgress = [
+    'Microsoft Azure AI-900',
+    'Microsoft Azure DP-100',
+  ]
+
   return (
-    <section id="education" className="education">
-      <h2 className="section-title">Education</h2>
-      <div className="education-container">
-        {education.map((edu, idx) => (
-          <div key={idx} className="education-card">
-            <div className="education-icon">
-              <FaGraduationCap />
-            </div>
-            <div className="education-content">
-              <div className="education-header">
-                <div>
-                  <h3 className="institution-name">{edu.institution}</h3>
-                  <h4 className="degree-name">{edu.degree}</h4>
-                </div>
-                <div className="education-meta">
-                  <div className="education-period">
-                    <FaCalendar className="calendar-icon" />
-                    {edu.period}
-                  </div>
-                  <span className={`status-badge ${edu.status === 'En cours' ? 'in-progress' : 'completed'}`}>
-                    {edu.status}
+    <>
+      <div className="divider" />
+      <section id="education" className="education">
+        <span className="section-label">// Education & Certifications</span>
+        <h2 className="section-heading">
+          Academic Background<br />
+          <span className="highlight">& Credentials</span>
+        </h2>
+
+        <div className="edu-grid">
+          <div className="edu-col">
+            <h3 className="edu-col-title">Education</h3>
+            {education.map((edu, idx) => (
+              <div key={idx} className="edu-card">
+                <div className="edu-card-top">
+                  <span className="edu-school">{edu.institution}</span>
+                  <span className={`edu-badge ${edu.status}`}>
+                    {edu.status === 'current' ? 'In Progress' : 'Completed'}
                   </span>
                 </div>
+                <p className="edu-degree">{edu.degree}</p>
+                <p className="edu-full">{edu.full}</p>
+                <span className="edu-period">{edu.period}</span>
               </div>
-              <p className="education-description">{edu.description}</p>
+            ))}
+          </div>
+
+          <div className="edu-col">
+            <h3 className="edu-col-title">Certifications</h3>
+            {certs.map((cert, idx) => (
+              <div key={idx} className="cert-card">
+                <div className="cert-card-top">
+                  <span className="cert-issuer">{cert.issuer}</span>
+                  <span className="cert-date">{cert.date}</span>
+                </div>
+                <p className="cert-title">{cert.title}</p>
+              </div>
+            ))}
+            <div className="cert-progress">
+              <span className="cert-progress-label">In Progress</span>
+              <div className="cert-progress-items">
+                {inProgress.map((item, idx) => (
+                  <span key={idx} className="cert-progress-item">
+                    <span className="progress-dot" />
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
-        ))}
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   )
 }
 
