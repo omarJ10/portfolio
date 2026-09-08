@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Root personal docs (tracked copies in public/)
+/*.pdf
+/*.docx
+/profile.jpg
