@@ -27,7 +27,7 @@ export default function ReadingViewModal({ isOpen, onClose }) {
           </div>
           <div className="rv-top-right">
             <a
-              href="/Zain_el_omar_JALLED.pdf"
+              href="./Zain_el_omar_JALLED.pdf"
               download="Zain_el_omar_JALLED.pdf"
               className="rv-download-cv-btn"
             >
@@ -64,7 +64,7 @@ export default function ReadingViewModal({ isOpen, onClose }) {
               <div className="subject-photo-meta-grid">
                 <div className="photo-tape-frame">
                   <div className="tape-strip top-tape" />
-                  <img src="/profile.jpg" alt="Zain El Omar JALLED" className="subject-portrait-img" />
+                  <img src="./profile.jpg" alt="Zain El Omar JALLED" className="subject-portrait-img" />
                   <div className="tape-strip btm-tape" />
                   <span className="photo-caption">SUBJECT / OJ-001</span>
                 </div>
@@ -87,7 +87,7 @@ export default function ReadingViewModal({ isOpen, onClose }) {
                   <div className="meta-field">
                     <label>CURRICULUM VITAE</label>
                     <a
-                      href="/Zain_el_omar_JALLED.pdf"
+                      href="./Zain_el_omar_JALLED.pdf"
                       download="Zain_el_omar_JALLED.pdf"
                       className="dossier-inline-link"
                     >
@@ -828,7 +828,7 @@ export default function ReadingViewModal({ isOpen, onClose }) {
 
               <div className="cv-download-prominent">
                 <a
-                  href="/Zain_el_omar_JALLED.pdf"
+                  href="./Zain_el_omar_JALLED.pdf"
                   download="Zain_el_omar_JALLED.pdf"
                   className="cv-download-btn-full"
                 >
@@ -880,7 +880,7 @@ export default function ReadingViewModal({ isOpen, onClose }) {
         <div className="rv-bottom-bar">
           <span>ARCHIVE OJ-001 · CLASSIFIED PERSONNEL DOSSIER</span>
           <a
-            href="/Zain_el_omar_JALLED.pdf"
+            href="./Zain_el_omar_JALLED.pdf"
             download="Zain_el_omar_JALLED.pdf"
             className="rv-bottom-download-link"
           >

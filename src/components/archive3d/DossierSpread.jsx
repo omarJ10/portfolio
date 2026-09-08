@@ -98,7 +98,7 @@ export default function DossierSpread({
                 <div className="subject-photo-meta-grid">
                   <div className="photo-tape-frame">
                     <div className="tape-strip top-tape" />
-                    <img src="/profile.jpg" alt="Zain El Omar JALLED" className="subject-portrait-img" />
+                    <img src="./profile.jpg" alt="Zain El Omar JALLED" className="subject-portrait-img" />
                     <div className="tape-strip btm-tape" />
                     <span className="photo-caption">SUBJECT / OJ-001</span>
                   </div>
@@ -124,7 +124,7 @@ export default function DossierSpread({
                     <div className="meta-field">
                       <label>CURRICULUM VITAE</label>
                       <a
-                        href="/Zain_el_omar_JALLED.pdf"
+                        href="./Zain_el_omar_JALLED.pdf"
                         download="Zain_el_omar_JALLED.pdf"
                         className="dossier-inline-link"
                       >
