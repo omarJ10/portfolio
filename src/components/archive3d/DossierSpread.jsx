@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { soundManager } from '../../utils/soundEffects'
+import profileImg from '../../assets/profile.jpg'
+import resumePdf from '../../assets/Zain_el_omar_JALLED.pdf'
 import {
   FaGithub,
   FaLinkedin,
@@ -98,7 +100,7 @@ export default function DossierSpread({
                 <div className="subject-photo-meta-grid">
                   <div className="photo-tape-frame">
                     <div className="tape-strip top-tape" />
-                    <img src="./profile.jpg" alt="Zain El Omar JALLED" className="subject-portrait-img" />
+                    <img src={profileImg} alt="Zain El Omar JALLED" className="subject-portrait-img" />
                     <div className="tape-strip btm-tape" />
                     <span className="photo-caption">SUBJECT / OJ-001</span>
                   </div>
@@ -124,7 +126,7 @@ export default function DossierSpread({
                     <div className="meta-field">
                       <label>CURRICULUM VITAE</label>
                       <a
-                        href="./Zain_el_omar_JALLED.pdf"
+                        href={resumePdf}
                         download="Zain_el_omar_JALLED.pdf"
                         className="dossier-inline-link"
                       >
@@ -911,7 +913,7 @@ export default function DossierSpread({
 
                 <div className="cv-download-prominent">
                   <a
-                    href="/Zain_el_omar_JALLED.pdf"
+                    href={resumePdf}
                     download="Zain_el_omar_JALLED.pdf"
                     className="cv-download-btn-full"
                   >
